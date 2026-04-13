@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/09 16:00:17 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/09 16:05:17 by kaclaes          ###   ########.fr       */
+/*   Created: 2026/04/13 15:17:47 by kaclaes           #+#    #+#             */
+/*   Updated: 2026/04/13 15:31:15 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stddef.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*us;
-	unsigned char	uc;
 
-	us = (unsigned char *) s;
-	uc = (unsigned char) c;
-	while (n--)
-		*us++ = uc;
-	return (s);
+	us = s;
+	while (n > 0)
+	{
+		*us++ = 0;
+		n--;
+	}
 }

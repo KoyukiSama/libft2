@@ -6,15 +6,15 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 15:49:20 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/09 15:58:44 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/13 15:23:32 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stddef.h>
 
 size_t	ft_strlen(const char *s)
 {
-	int	i = 0;
+	size_t	i = 0;
 
 	while (s[i])
 		i++;

@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 14:38:41 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/09 15:55:22 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/13 15:30:55 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,6 @@ int	main(void)
 
 	printf("----TEST_FUNC05: ft_strlen()----\n");
 	printf(RED);
-	
 	if (ft_strlen("hello") != strlen("hello"))
 		printf("ERROR ft_strlen(\"hello\")\n"), error = 1;
 	if (ft_strlen("") != strlen(""))
@@ -167,5 +166,49 @@ int	main(void)
 	printf(GRN);
 	if (!error)
 		printf("PASS: ft_strlen()\n");
+	printf(RESET);
+
+	printf("----TEST_FUNC05: ft_strlen()----\n");
+	printf(RED);
+	if (ft_strlen("hello") != strlen("hello"))
+		printf("ERROR ft_strlen(\"hello\")\n"), error = 1;
+	if (ft_strlen("") != strlen(""))
+		printf("ERROR ft_strlen(\"\"))\n"), error = 1;
+	printf(GRN);
+	if (!error)
+		printf("PASS: ft_strlen()\n");
+	printf(RESET);
+
+	printf("----TEST_FUNC06: ft_memset()----\n");
+	printf(RED);
+	char *block = malloc(20);
+	for (int i = 0; i < 20; i++)
+		block[i] = '0';
+	if (strncmp(ft_memset(block, 'a', 0), "00000000000000000000", 20))
+		printf("ERROR ft_memset(block, 'a', 0)\n"), error = 1;
+	for (int i = 0; i < 20; i++)
+		block[i] = '0';
+	if (strncmp(ft_memset(block, 'a', 5), "aaaaa000000000000000", 20))
+		printf("ERROR ft_memset(block, 'a', 5)\n"), error = 1;
+	printf(GRN);
+	if (!error)
+		printf("PASS: ft_memset()\n");
+	printf(RESET);
+
+	printf("----TEST_FUNC07: ft_bzero()----\n");
+	printf(RED);
+	for (int i = 0; i < 20; i++)
+		block[i] = 'a';
+	ft_bzero(block, 0);
+	if (strncmp(block, "aaaaaaaaaaaaaaaaaaaa", 20))
+		printf("ERROR ft_bzero(block, 'a', 0)\n"), error = 1;
+	for (int i = 0; i < 20; i++)
+		block[i] = 'a';
+	ft_bzero(block, 5);
+	if (strncmp(block, "\0\0\0\0\0aaaaaaaaaaaaaaa", 20))
+		printf("ERROR ft_bzero(block, 'a', 5)\n"), error = 1;
+	printf(GRN);
+	if (!error)
+		printf("PASS: ft_bzero()\n");
 	printf(RESET);
 }
