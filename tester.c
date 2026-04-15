@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 14:38:41 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/13 15:30:55 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/15 16:31:10 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,4 +211,51 @@ int	main(void)
 	if (!error)
 		printf("PASS: ft_bzero()\n");
 	printf(RESET);
+
+	printf("----TEST_FUNC08: ft_memcpy()----\n");
+	printf(RED);
+	char *block2 = malloc(20);
+	for (int i = 0; i < 20; i++)
+	{
+		block[i] = 0;
+		block2[i] = 'a';
+	}
+	ft_memcpy(block, block2, 5);
+	if (strncmp(block, "aaaaa\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 20))
+		printf("ERROR ft_memcpy(block, block2, 5)\n"), error = 1;
+	ft_memcpy(block, block2, 20);
+	if (strncmp(block, "aaaaaaaaaaaaaaaaaaaa", 20))
+		printf("ERROR ft_memcpy(block, block2, 20)\n"), error = 1;
+	printf(GRN);
+	if (!error)
+		printf("PASS: ft_memcpy()\n");
+	printf(RESET);
+
+	printf("----TEST_FUNC09: ft_memmove()----\n");
+	printf(RED);
+	free(block2);
+	for (int i = 0; i < 10; i++)
+	{
+		block[i] = 0;
+		block[i + 10] = 'a';
+	}
+	ft_memmove(block, block + 10, 10);
+	if (strncmp(block, "aaaaaaaaaaaaaaaaaaaa", 20))
+		printf("ERROR ft_memmove(block, block + 10, 10)\n"), error = 1;
+	for (int i = 0; i < 10; i++)
+	{
+		block[i] = 0;
+		block[i + 10] = 'a';
+	}
+	ft_memmove(block + 10, block, 10);
+	if (strncmp(block, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 20))
+		printf("ERROR ft_memmove(block + 10, block, 10)\n"), error = 1;
+	printf(GRN);
+	if (!error)
+		printf("PASS: ft_memmove()\n");
+	printf(RESET);
+
+	printf("----no tests TEST_FUNC10: ft_strlcpy()----\n");
+	printf("----no tests TEST_FUNC10: ft_strlcat()----\n");
+	
 }
