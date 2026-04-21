@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 14:35:52 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/15 15:49:04 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/21 13:14:16 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int		ft_isprint(int c);
 
 // string.h functions
 size_t	ft_strlen(const char *s);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 
 // stdlib.h functions
 void	*ft_memset(void *s, int c, size_t n);

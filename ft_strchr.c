@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:36:02 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/21 11:46:25 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/21 12:12:14 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 //    specified  as   '\0',   these
 //    functions return a pointer to
 //    the terminator.				(from man page strrchr)
-char	*strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	const unsigned char	*us;
 	unsigned char		uc;
