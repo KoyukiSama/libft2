@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:10:56 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/22 18:28:14 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/22 18:30:45 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,34 +99,34 @@ static char const	*get_next_word(char const *s, char delim)
 	return (s);
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-int	main(int argc, char **argv)
-{
-	const char	*s;
-	char	**strs;
-	(void) argc;
+// #include <stdio.h>
+// #include <stdlib.h>
+// int	main(int argc, char **argv)
+// {
+// 	const char	*s;
+// 	char	**strs;
+// 	(void) argc;
 
-	s = (const char *) argv[1];
-	// printf("word_count: [%li]\n\n", count_word(s, argv[2][0]));
-	// while (*s)
-	// {
-	// 	printf("%s, len:[%li]\n", s, get_word_len(s, argv[2][0]));
-	// 	s = get_next_word(s, argv[2][0]);
-	// }
-	// printf("\n");
-	strs = ft_split(s, argv[2][0]);
-	printf("[%p]\n", strs);
-	if (!strs)
-		return (0);
-	size_t	i = 0;
-	while (strs[i])
-	{
-		printf("[%s]\n", strs[i]);
-		free(strs[i]);
-		i++;
-	}
-	printf("[%s]\n", strs[i]);
-	free(strs);
-	return (0);
-}
+// 	s = (const char *) argv[1];
+// 	// printf("word_count: [%li]\n\n", count_word(s, argv[2][0]));
+// 	// while (*s)
+// 	// {
+// 	// 	printf("%s, len:[%li]\n", s, get_word_len(s, argv[2][0]));
+// 	// 	s = get_next_word(s, argv[2][0]);
+// 	// }
+// 	// printf("\n");
+// 	strs = ft_split(s, argv[2][0]);
+// 	printf("[%p]\n", strs);
+// 	if (!strs)
+// 		return (0);
+// 	size_t	i = 0;
+// 	while (strs[i])
+// 	{
+// 		printf("[%s]\n", strs[i]);
+// 		free(strs[i]);
+// 		i++;
+// 	}
+// 	printf("[%s]\n", strs[i]);
+// 	free(strs);
+// 	return (0);
+// }
