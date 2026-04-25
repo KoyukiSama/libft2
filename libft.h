@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 14:35:52 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/22 19:15:05 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/25 23:13:37 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,17 @@
 
 #include <stdlib.h>
 
-// ctype.h functions
+// linked list struct
+typedef struct	s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
+
+// list functions
+t_list	*ft_lstlast(t_list *lst)
+
+// ctype.h like functions
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -28,7 +38,10 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strdup(const char *s);
 
-// stdlib.h functions
+// stdio.h like functions
+void	ft_putstr_fd(char *s, int fd);
+
+// stdlib.h like functions
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
