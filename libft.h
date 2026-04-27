@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 14:35:52 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/25 23:13:37 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/27 17:48:30 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@ struct s_list *next;
 } t_list;
 
 // list functions
-t_list	*ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstnew(void *content);
+void	ft_lstclear(t_list **lst, void (*del)(void*));
+void	ft_lstadd_back(t_list **lst, t_list *new);
+t_list	*ft_lstlast(t_list *lst);
 
 // ctype.h like functions
 int		ft_isalpha(int c);
