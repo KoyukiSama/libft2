@@ -6,11 +6,13 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:32:14 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/28 18:07:34 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/28 19:38:00 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	return (c + 'A' - 'a');
+	if (c >= 'a' && c <= 'z')
+		return (c + 'A' - 'a');
+	return (c);
 }

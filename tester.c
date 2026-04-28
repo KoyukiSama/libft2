@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 14:38:41 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/28 19:21:28 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/28 19:35:41 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@
 #define RED "\033[31m"
 #define GRN "\033[32m"
 
+static int norm(int x)
+{
+	return (x != 0);
+}
+
 void	test_int(char *name, int a, int b)
 {
 	static int total = 0;
@@ -28,6 +33,7 @@ void	test_int(char *name, int a, int b)
 	total++;
 	if (a == b)
 	{
+
 		printf("\033[32mPASS: %s\n\033[0m", name);
 		pass++;
 	}
@@ -54,7 +60,7 @@ void test_isalpha(void)
 		char name[50];
 		sprintf(name, "isalpha('%c')", (c >= 32 && c <= 126) ? c : '?');
 
-		test_int(name, ft_isalpha(c), isalpha(c));
+		test_int(name, ft_isalpha(c), norm(isalpha(c)));
 	}
 }
 
@@ -67,7 +73,7 @@ void test_isdigit(void)
 		char name[50];
 		sprintf(name, "isdigit(%d)", c);
 
-		test_int(name, ft_isdigit(c), isdigit(c));
+		test_int(name, ft_isdigit(c), norm(isdigit(c)));
 	}
 }
 
@@ -89,7 +95,7 @@ void test_isalnum(void)
 		char name[50];
 		sprintf(name, "isalnum('%c')", (c >= 32 && c <= 126) ? c : '?');
 
-		test_int(name, ft_isalnum(c), isalnum(c));
+		test_int(name, ft_isalnum(c), norm(isalnum(c)));
 	}
 }
 
@@ -102,7 +108,7 @@ void test_isascii(void)
 		char name[50];
 		sprintf(name, "isascii(%d)", c);
 
-		test_int(name, ft_isascii(c), isascii(c));
+		test_int(name, ft_isascii(c), norm(isascii(c)));
 	}
 }
 
@@ -115,7 +121,7 @@ void test_isprint(void)
 		char name[50];
 		sprintf(name, "isprint(%d)", c);
 
-		test_int(name, ft_isprint(c), isprint(c));
+		test_int(name, ft_isprint(c), norm(isprint(c)));
 	}
 }
 
