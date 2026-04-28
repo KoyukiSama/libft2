@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 14:38:41 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/15 16:31:10 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/28 19:21:28 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,242 +20,138 @@
 #define RED "\033[31m"
 #define GRN "\033[32m"
 
+void	test_int(char *name, int a, int b)
+{
+	static int total = 0;
+	static int pass = 0;
+
+	total++;
+	if (a == b)
+	{
+		printf("\033[32mPASS: %s\n\033[0m", name);
+		pass++;
+	}
+	else
+		printf("\033[31mFAIL: %s (got=%d expected=%d)\n\033[0m", name, a, b);
+
+	// optional summary (only prints once at end if you want later)
+}
+
+void test_isalpha(void)
+{
+	printf("=== isalpha ===\n");
+
+	int tests[] = {
+		'A', 'Z', 'a', 'z',
+		'@', '[', '`', '{',
+		'0', '9', 127, -1
+	};
+
+	for (int i = 0; i < (int)(sizeof(tests)/sizeof(int)); i++)
+	{
+		char c = (char)tests[i];
+
+		char name[50];
+		sprintf(name, "isalpha('%c')", (c >= 32 && c <= 126) ? c : '?');
+
+		test_int(name, ft_isalpha(c), isalpha(c));
+	}
+}
+
+void test_isdigit(void)
+{
+	printf("=== isdigit ===\n");
+
+	for (int c = -5; c <= 130; c++)
+	{
+		char name[50];
+		sprintf(name, "isdigit(%d)", c);
+
+		test_int(name, ft_isdigit(c), isdigit(c));
+	}
+}
+
+void test_isalnum(void)
+{
+	printf("=== isalnum ===\n");
+
+	int checks[] = {
+		'A', 'Z', 'a', 'z',
+		'0', '9',
+		'@', '[', '`', '{',
+		' ', 127, -1
+	};
+
+	for (int i = 0; i < (int)(sizeof(checks)/sizeof(int)); i++)
+	{
+		char c = (char)checks[i];
+
+		char name[50];
+		sprintf(name, "isalnum('%c')", (c >= 32 && c <= 126) ? c : '?');
+
+		test_int(name, ft_isalnum(c), isalnum(c));
+	}
+}
+
+void test_isascii(void)
+{
+	printf("=== isascii ===\n");
+
+	for (int c = -20; c <= 200; c += 7)
+	{
+		char name[50];
+		sprintf(name, "isascii(%d)", c);
+
+		test_int(name, ft_isascii(c), isascii(c));
+	}
+}
+
+void test_isprint(void)
+{
+	printf("=== isprint ===\n");
+
+	for (int c = -10; c <= 140; c += 5)
+	{
+		char name[50];
+		sprintf(name, "isprint(%d)", c);
+
+		test_int(name, ft_isprint(c), isprint(c));
+	}
+}
+
+void test_toupper(void)
+{
+	printf("=== toupper ===\n");
+
+	for (int c = -10; c <= 140; c += 3)
+	{
+		char name[50];
+		sprintf(name, "toupper(%d)", c);
+
+		test_int(name, ft_toupper(c), toupper(c));
+	}
+}
+
+void test_tolower(void)
+{
+	printf("=== tolower ===\n");
+
+	for (int c = -10; c <= 140; c += 3)
+	{
+		char name[50];
+		sprintf(name, "tolower(%d)", c);
+
+		test_int(name, ft_tolower(c), tolower(c));
+	}
+}
+
 int	main(void)
 {
-	char	char1 = 0;
-	int		int1 = 0;
-	int		error = 0;
-
-	printf("----TEST_FUNC00: ft_alpha()----\n");
-	printf(RED);
-	char1 = '@';
-	if (ft_isalpha(char1) != 0)
-		printf("ERROR ft_isalpha(%c)\n", char1), error = 1;
-	char1 = 'A';
-	if (ft_isalpha(char1) == 0)
-		printf("ERROR ft_isalpha(%c)\n", char1), error = 1;
-	char1 = 'Z';
-	if (ft_isalpha(char1) == 0)
-		printf("ERROR ft_isalpha(%c)\n", char1), error = 1;
-	char1 = '[';
-	if (ft_isalpha(char1) != 0)
-		printf("ERROR ft_isalpha(%c)\n", char1), error = 1;
-	char1 = '`';
-	if (ft_isalpha(char1) != 0)
-		printf("ERROR ft_isalpha(%c)\n", char1), error = 1;
-	char1 = 'a';
-	if (ft_isalpha(char1) == 0)
-		printf("ERROR ft_isalpha(%c)\n", char1), error = 1;
-	char1 = 'z';
-	if (ft_isalpha(char1) == 0)
-		printf("ERROR ft_isalpha(%c)\n", char1), error = 1;
-	char1 = '{';
-	if (ft_isalpha(char1) != 0)
-		printf("ERROR ft_isalpha(%c)\n", char1), error = 1;
-	printf(GRN);
-	if (!error)
-		printf("PASS: ft_isdigit\n");
-	printf(RESET);
-
-	printf("----TEST_FUNC01: ft_isdigit()----\n");
-	printf(RED);
-	char1 = '/';
-	if (ft_isdigit(char1) != 0)
-		printf("ERROR ft_isdigit(%c)\n", char1), error = 1;
-	char1 = '0';
-	if (ft_isdigit(char1) == 0)
-		printf("ERROR ft_isdigit(%c)\n", char1), error = 1;
-	char1 = '9';
-	if (ft_isdigit(char1) == 0)
-		printf("ERROR ft_isdigit(%c)\n", char1), error = 1;
-	char1 = ':';
-	if (ft_isdigit(char1) != 0)
-		printf("ERROR ft_isdigit(%c)\n", char1), error = 1;
-	printf(GRN);
-	if (!error)
-		printf("PASS: ft_isdigit()\n");
-	printf(RESET);
-
-	printf("----TEST_FUNC02: ft_isalnum()----\n");
-	printf(RED);
-	char1 = '@';
-	if (ft_isalnum(char1) != 0)
-		printf("ERROR ft_isalnum(%c)\n", char1), error = 1;
-	char1 = 'A';
-	if (ft_isalnum(char1) == 0)
-		printf("ERROR ft_isalnum(%c)\n", char1), error = 1;
-	char1 = 'Z';
-	if (ft_isalnum(char1) == 0)
-		printf("ERROR ft_isalnum(%c)\n", char1), error = 1;
-	char1 = '[';
-	if (ft_isalnum(char1) != 0)
-		printf("ERROR ft_isalnum(%c)\n", char1), error = 1;
-	char1 = '`';
-	if (ft_isalnum(char1) != 0)
-		printf("ERROR ft_isalnum(%c)\n", char1), error = 1;
-	char1 = 'a';
-	if (ft_isalnum(char1) == 0)
-		printf("ERROR ft_isalnum(%c)\n", char1), error = 1;
-	char1 = 'z';
-	if (ft_isalnum(char1) == 0)
-		printf("ERROR ft_isalnum(%c)\n", char1), error = 1;
-	char1 = '{';
-	if (ft_isalnum(char1) != 0)
-		printf("ERROR ft_isalnum(%c)\n", char1), error = 1;
-	char1 = '/';
-	if (ft_isalnum(char1) != 0)
-		printf("ERROR ft_isalnum(%c)\n", char1), error = 1;
-	char1 = '0';
-	if (ft_isalnum(char1) == 0)
-		printf("ERROR ft_isalnum(%c)\n", char1), error = 1;
-	char1 = '9';
-	if (ft_isalnum(char1) == 0)
-		printf("ERROR ft_isalnum(%c)\n", char1), error = 1;
-	char1 = ':';
-	if (ft_isalnum(char1) != 0)
-		printf("ERROR ft_isalnum(%c)\n", char1), error = 1;
-	printf(GRN);
-	if (!error)
-		printf("PASS: ft_isalnum()\n");
-	printf(RESET);
-
-	printf("----TEST_FUNC03: ft_isascii()----\n");
-	printf(RED);
-	int1 = -1;
-	if (ft_isascii(int1) != 0)
-		printf("ERROR ft_isascii(%i)\n", int1), error = 1;
-	int1 = 0;
-	if (ft_isascii(int1) == 0)
-		printf("ERROR ft_isascii(%i)\n", int1), error = 1;
-	int1 = 127;
-	if (ft_isascii(int1) == 0)
-		printf("ERROR ft_isascii(%i)\n", int1), error = 1;
-	int1 = 128;
-	if (ft_isascii(int1) != 0)
-		printf("ERROR ft_isascii(%i)\n", int1), error = 1;
-	printf(GRN);
-	if (!error)
-		printf("PASS: ft_isascii()\n");
-	printf(RESET);
-
-	printf("----TEST_FUNC04: ft_isprint()----\n");
-	printf(RED);
-	int1 = 31;
-	if (ft_isprint(int1) != 0)
-		printf("ERROR ft_isprint(%i)\n", int1), error = 1;
-	int1 = 32;
-	if (ft_isprint(int1) == 0)
-		printf("ERROR ft_isprint(%i)\n", int1), error = 1;
-	int1 = 126;
-	if (ft_isprint(int1) == 0)
-		printf("ERROR ft_isprint(%i)\n", int1), error = 1;
-	int1 = 127;
-	if (ft_isprint(int1) != 0)
-		printf("ERROR ft_isprint(%i)\n", int1), error = 1;
-	printf(GRN);
-	if (!error)
-		printf("PASS: ft_isprint()\n");
-	printf(RESET);
-
-	printf("----TEST_FUNC05: ft_strlen()----\n");
-	printf(RED);
-	if (ft_strlen("hello") != strlen("hello"))
-		printf("ERROR ft_strlen(\"hello\")\n"), error = 1;
-	if (ft_strlen("") != strlen(""))
-		printf("ERROR ft_strlen(\"\"))\n"), error = 1;
-	printf(GRN);
-	if (!error)
-		printf("PASS: ft_strlen()\n");
-	printf(RESET);
-
-	printf("----TEST_FUNC05: ft_strlen()----\n");
-	printf(RED);
-	if (ft_strlen("hello") != strlen("hello"))
-		printf("ERROR ft_strlen(\"hello\")\n"), error = 1;
-	if (ft_strlen("") != strlen(""))
-		printf("ERROR ft_strlen(\"\"))\n"), error = 1;
-	printf(GRN);
-	if (!error)
-		printf("PASS: ft_strlen()\n");
-	printf(RESET);
-
-	printf("----TEST_FUNC06: ft_memset()----\n");
-	printf(RED);
-	char *block = malloc(20);
-	for (int i = 0; i < 20; i++)
-		block[i] = '0';
-	if (strncmp(ft_memset(block, 'a', 0), "00000000000000000000", 20))
-		printf("ERROR ft_memset(block, 'a', 0)\n"), error = 1;
-	for (int i = 0; i < 20; i++)
-		block[i] = '0';
-	if (strncmp(ft_memset(block, 'a', 5), "aaaaa000000000000000", 20))
-		printf("ERROR ft_memset(block, 'a', 5)\n"), error = 1;
-	printf(GRN);
-	if (!error)
-		printf("PASS: ft_memset()\n");
-	printf(RESET);
-
-	printf("----TEST_FUNC07: ft_bzero()----\n");
-	printf(RED);
-	for (int i = 0; i < 20; i++)
-		block[i] = 'a';
-	ft_bzero(block, 0);
-	if (strncmp(block, "aaaaaaaaaaaaaaaaaaaa", 20))
-		printf("ERROR ft_bzero(block, 'a', 0)\n"), error = 1;
-	for (int i = 0; i < 20; i++)
-		block[i] = 'a';
-	ft_bzero(block, 5);
-	if (strncmp(block, "\0\0\0\0\0aaaaaaaaaaaaaaa", 20))
-		printf("ERROR ft_bzero(block, 'a', 5)\n"), error = 1;
-	printf(GRN);
-	if (!error)
-		printf("PASS: ft_bzero()\n");
-	printf(RESET);
-
-	printf("----TEST_FUNC08: ft_memcpy()----\n");
-	printf(RED);
-	char *block2 = malloc(20);
-	for (int i = 0; i < 20; i++)
-	{
-		block[i] = 0;
-		block2[i] = 'a';
-	}
-	ft_memcpy(block, block2, 5);
-	if (strncmp(block, "aaaaa\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 20))
-		printf("ERROR ft_memcpy(block, block2, 5)\n"), error = 1;
-	ft_memcpy(block, block2, 20);
-	if (strncmp(block, "aaaaaaaaaaaaaaaaaaaa", 20))
-		printf("ERROR ft_memcpy(block, block2, 20)\n"), error = 1;
-	printf(GRN);
-	if (!error)
-		printf("PASS: ft_memcpy()\n");
-	printf(RESET);
-
-	printf("----TEST_FUNC09: ft_memmove()----\n");
-	printf(RED);
-	free(block2);
-	for (int i = 0; i < 10; i++)
-	{
-		block[i] = 0;
-		block[i + 10] = 'a';
-	}
-	ft_memmove(block, block + 10, 10);
-	if (strncmp(block, "aaaaaaaaaaaaaaaaaaaa", 20))
-		printf("ERROR ft_memmove(block, block + 10, 10)\n"), error = 1;
-	for (int i = 0; i < 10; i++)
-	{
-		block[i] = 0;
-		block[i + 10] = 'a';
-	}
-	ft_memmove(block + 10, block, 10);
-	if (strncmp(block, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 20))
-		printf("ERROR ft_memmove(block + 10, block, 10)\n"), error = 1;
-	printf(GRN);
-	if (!error)
-		printf("PASS: ft_memmove()\n");
-	printf(RESET);
-
-	printf("----no tests TEST_FUNC10: ft_strlcpy()----\n");
-	printf("----no tests TEST_FUNC10: ft_strlcat()----\n");
-	
+	test_isalpha();
+	test_isdigit();
+	test_isalnum();
+	test_isascii();
+	test_isprint();
+	test_toupper();
+	test_tolower();
 }

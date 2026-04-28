@@ -6,11 +6,12 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 21:56:31 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/27 17:17:32 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/28 19:27:09 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 #include <stddef.h>
 
 t_list	*ft_lstnew(void *content)

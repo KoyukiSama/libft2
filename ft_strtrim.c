@@ -6,11 +6,11 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 16:52:40 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/21 17:46:50 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/28 19:26:51 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdlib.h"
+#include "libft.h"
 #include <stddef.h>
 #include <stdlib.h>
 
@@ -51,9 +51,9 @@ static int	in_set(const char *set, char c)
 	return (0);
 }
 
-#include <stdio.h>
-int main(int argc, char **argv)
-{
-	(void) argc;
-	printf("%s", ft_strtrim(argv[1], argv[2]));
-}
+// #include <stdio.h>
+// int main(int argc, char **argv)
+// {
+// 	(void) argc;
+// 	printf("%s", ft_strtrim(argv[1], argv[2]));
+// }

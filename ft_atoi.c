@@ -6,11 +6,13 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:49:36 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/21 14:56:52 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/28 19:22:36 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	ft_isspace(int c);
 
 int	ft_atoi(const char *nptr)
 {
@@ -36,7 +38,7 @@ int	ft_atoi(const char *nptr)
 	return (nbr * sign);
 }
 
-int	ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	return ((c >= '\t' && c <= '\r') || c == ' ');
 }

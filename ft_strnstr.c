@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 12:54:32 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/21 13:31:08 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/28 19:23:36 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	little_len;
 	size_t	i;
 	size_t	j;
 
