@@ -6,13 +6,13 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:32:10 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/28 19:38:15 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/28 19:41:38 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
-		return (c + 'A' - 'a');
+		return (c - 'A' + 'a');
 	return (c);
 }
