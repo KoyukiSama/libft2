@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 14:38:41 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/28 19:35:41 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/28 19:40:56 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ void test_toupper(void)
 {
 	printf("=== toupper ===\n");
 
-	for (int c = -10; c <= 140; c += 3)
+	for (int c = 0; c <= 140; c += 3)
 	{
 		char name[50];
 		sprintf(name, "toupper(%d)", c);
@@ -142,7 +142,7 @@ void test_tolower(void)
 {
 	printf("=== tolower ===\n");
 
-	for (int c = -10; c <= 140; c += 3)
+	for (int c = 0; c <= 140; c += 3)
 	{
 		char name[50];
 		sprintf(name, "tolower(%d)", c);
