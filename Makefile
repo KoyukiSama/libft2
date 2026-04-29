@@ -22,9 +22,9 @@ OBJ_LKDLST	:= $(SRC_LKDLST:.c=.o)
 
 OBJ := $(OBJ_LBFT) $(OBJ_LKDLST)
 
-all: $(NAME)
+all: $(MAKE)
 
-$(NAME): $(OBJ)
+$(MAKE): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 %.o: %.c

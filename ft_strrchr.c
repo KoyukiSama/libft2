@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:49:49 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/21 12:12:08 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/29 16:16:56 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const unsigned char *us;
+	const unsigned char	*us;
 	unsigned char		uc;
 
 	us = (const unsigned char *) s;

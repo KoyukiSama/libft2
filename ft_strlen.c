@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 15:49:20 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/13 15:23:32 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/29 16:16:20 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	i = 0;
+	size_t	i;
 
+	i = 0;
 	while (s[i])
 		i++;
 	return (i);

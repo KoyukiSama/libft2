@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 12:54:32 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/28 19:23:36 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/29 16:16:43 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		while (i + j < len && little[j] && big[i + j] == little[j])
 			j++;
 		if (little[j] == '\0')
-			return ((char *) (big + i));
+			return ((char *)(big + i));
 		i++;
 	}
 	return (NULL);

@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:49:36 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/28 19:22:36 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/29 16:20:37 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static int	ft_isspace(int c);
 
 int	ft_atoi(const char *nptr)
 {
-	int	nbr;
-	int	sign;
+	long	nbr;
+	long	sign;
 
 	nbr = 0;
 	sign = 1;
@@ -35,7 +35,7 @@ int	ft_atoi(const char *nptr)
 		nbr = (*nptr - '0') + (nbr * 10);
 		nptr++;
 	}
-	return (nbr * sign);
+	return ((int)(nbr * sign));
 }
 
 static int	ft_isspace(int c)

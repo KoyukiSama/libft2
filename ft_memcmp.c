@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 12:42:18 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/28 18:00:16 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/29 16:22:46 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (i < n)
 	{
 		if (us1[i] != us2[i])
-			return ((int) (us1[i] - us2[i]));
+			return ((int)(us1[i] - us2[i]));
 		i++;
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:10:56 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/29 14:38:32 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/29 16:18:00 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static size_t		get_word_len(char const *s, char delim);
 static size_t		count_word(char const *s, char c);
 static char const	*get_next_word(char const *s, char delim);
 
-#include <stdio.h>
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
@@ -60,7 +59,7 @@ char	**ft_split(char const *s, char c)
 }
 
 // free strs
-static char		**free_strs(char **strs, size_t count)
+static char	**free_strs(char **strs, size_t count)
 {
 	size_t	i;
 
