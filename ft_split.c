@@ -6,10 +6,11 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:10:56 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/28 17:57:50 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/29 14:38:32 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stddef.h>
 #include <stdlib.h>
 
@@ -29,6 +30,15 @@ char	**ft_split(char const *s, char c)
 	strs = malloc((count_word(s, c) + 1) * sizeof(char *));
 	if (!strs)
 		return (NULL);
+	if (s[0] == '\0')
+		return (strs[0] = NULL, strs);
+	if (c == '\0')
+	{
+		strs[0] = ft_strdup(s);
+		if (!strs[0])
+			return (free(strs), NULL);
+		return (strs[1] = NULL, strs);
+	}
 	if (*s == c)
 		s = get_next_word(s, c);
 	i = 0;
@@ -67,6 +77,10 @@ static size_t	count_word(char const *s, char c)
 {
 	size_t	word_count;
 
+	if (s[0] == '\0')
+		return (0);
+	if (c == '\0')
+		return (1);
 	word_count = 0;
 	if (*s == c)
 		s = get_next_word(s, c);
@@ -105,9 +119,11 @@ static char const	*get_next_word(char const *s, char delim)
 // {
 // 	const char	*s;
 // 	char	**strs;
+// 	(void) argv;
 // 	(void) argc;
 
-// 	s = (const char *) argv[1];
+// 	s = "tripouille";
+// 	char splitter = 0;
 // 	// printf("word_count: [%li]\n\n", count_word(s, argv[2][0]));
 // 	// while (*s)
 // 	// {
@@ -115,8 +131,7 @@ static char const	*get_next_word(char const *s, char delim)
 // 	// 	s = get_next_word(s, argv[2][0]);
 // 	// }
 // 	// printf("\n");
-// 	strs = ft_split(s, argv[2][0]);
-// 	printf("[%p]\n", strs);
+// 	strs = ft_split(s, splitter);
 // 	if (!strs)
 // 		return (0);
 // 	size_t	i = 0;
