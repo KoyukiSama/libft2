@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 21:05:57 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/30 17:51:34 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/30 18:04:13 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	char	tmp_str[11];
 	size_t	offset;
-	
+
 	if (n == 0)
 	{
 		write(fd, "0", 1);

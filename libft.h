@@ -6,21 +6,21 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 14:35:52 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/28 19:22:19 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/30 16:15:51 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stddef.h>
+# include <stddef.h>
 
 // linked list struct
-typedef struct	s_list
+typedef struct s_list
 {
-void *content;
-struct s_list *next;
-} t_list;
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 // memory funcs
 void	*ft_memset(void *s, int c, size_t n);
@@ -76,6 +76,5 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
-
 
 #endif
