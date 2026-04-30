@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:10:56 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/30 16:24:02 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/04/30 16:38:37 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,38 +102,38 @@ static char	*cpy_word(char **strs, size_t i, char const *s, char c)
 	return ((char *)(s + len));
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-int	main(int argc, char **argv)
-{
-	char	**strs;
-	(void) argc;
+// #include <stdio.h>
+// #include <stdlib.h>
+// int	main(int argc, char **argv)
+// {
+// 	char	**strs;
+// 	(void) argc;
 
-	const char *s = argv[1];
-	char splitter = '\0';
-	printf("word_count: [%li]\n-----------\n", count_word(s, splitter));
-	// while (*s)
-	// {
-	// 	while (*s == splitter)
-	// 		s++;
-	// 	printf("%s, len:[%li]\n", s, get_word_len(s, splitter));
-	// 	if (*s == '\0')
-	// 		break;
-	// 	while (*s && *s != splitter)
-	// 		s++;
-	// }
-	//printf("\n");
-	strs = ft_split(s, splitter);
-	if (!strs)
-		return (0);
-	size_t	i = 0;
-	while (strs[i])
-	{
-		printf("[%s]\n", strs[i]);
-		free(strs[i]);
-		i++;
-	}
-	printf("[%s]\n", strs[i]);
-	free(strs);
-	return (0);
-}
+// 	const char *s = argv[1];
+// 	char splitter = '\0';
+// 	printf("word_count: [%li]\n-----------\n", count_word(s, splitter));
+// 	// while (*s)
+// 	// {
+// 	// 	while (*s == splitter)
+// 	// 		s++;
+// 	// 	printf("%s, len:[%li]\n", s, get_word_len(s, splitter));
+// 	// 	if (*s == '\0')
+// 	// 		break;
+// 	// 	while (*s && *s != splitter)
+// 	// 		s++;
+// 	// }
+// 	//printf("\n");
+// 	strs = ft_split(s, splitter);
+// 	if (!strs)
+// 		return (0);
+// 	size_t	i = 0;
+// 	while (strs[i])
+// 	{
+// 		printf("[%s]\n", strs[i]);
+// 		free(strs[i]);
+// 		i++;
+// 	}
+// 	printf("[%s]\n", strs[i]);
+// 	free(strs);
+// 	return (0);
+// }
