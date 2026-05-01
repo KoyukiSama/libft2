@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:36:02 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/21 12:12:14 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/05/01 16:24:33 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ char	*ft_strchr(const char *s, int c)
 	const unsigned char	*us;
 	unsigned char		uc;
 
+	if (!s)
+		return (NULL);
 	us = (const unsigned char *) s;
 	uc = (unsigned char) c;
 	while (*us != uc && *us)

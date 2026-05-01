@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 15:09:45 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/28 17:57:02 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/05/01 16:37:34 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strdup(const char *s)
 	char	*new_s;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	new_s = malloc(ft_strlen(s) + 1);
 	if (!new_s)
 		return (NULL);

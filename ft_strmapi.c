@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 20:51:02 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/27 15:16:03 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/05/01 16:41:00 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*s_new;
 	size_t	i;
 
+	if (!s || !f)
+		return (NULL);
 	s_new = malloc(ft_strlen(s) + 1);
 	if (!s_new)
 		return (NULL);

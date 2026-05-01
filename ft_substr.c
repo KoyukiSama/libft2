@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 16:37:49 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/28 19:23:02 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/05/01 16:38:21 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	str_len = ft_strlen(s);
 	if (start >= str_len)
 		return (ft_strdup(""));

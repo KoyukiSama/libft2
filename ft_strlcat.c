@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:27:44 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/28 17:56:08 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/05/01 16:36:48 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,17 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	rem;
 
 	dst_len = 0;
-	while (dst_len < size && dst[dst_len])
-	{
+	while (dst && dst_len < size && dst[dst_len])
 		dst_len++;
-	}
 	src_len = 0;
-	while (src[src_len])
-	{
+	while (src && src[src_len])
 		src_len++;
-	}
-	if (dst_len == size)
+	if (dst_len == size || !src || !dst)
 		return (src_len + dst_len);
 	dst += dst_len;
 	rem = size - dst_len - 1;
 	while (rem-- > 0 && *src)
-	{
 		*dst++ = *src++;
-	}
 	*dst = '\0';
 	return (dst_len + src_len);
 }

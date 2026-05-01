@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 12:11:58 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/29 16:16:30 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/05/01 16:27:02 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
+	if (!s1 || !s2)
+		return (-1);
 	if (n == 0)
 		return (0);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 15:56:01 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/15 15:56:04 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/05/01 16:28:49 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	src_len;
 
+	if (!src)
+		return (0);
 	src_len = ft_strlen(src);
-	if (size == 0)
+	if (size == 0 || !dst)
 		return (src_len);
 	size--;
 	if (size > src_len)

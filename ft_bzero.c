@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 15:17:47 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/13 15:31:15 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/05/01 16:39:21 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*us;
 
+	if (!s)
+		return ;
 	us = s;
 	while (n > 0)
 	{

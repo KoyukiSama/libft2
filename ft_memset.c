@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 16:00:17 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/13 15:26:58 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/05/01 16:39:04 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memset(void *s, int c, size_t n)
 	unsigned char	*us;
 	unsigned char	uc;
 
+	if (!s)
+		return (NULL);
 	us = (unsigned char *) s;
 	uc = (unsigned char) c;
 	while (n > 0)

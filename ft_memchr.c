@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 12:30:36 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/21 12:41:22 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/05/01 16:24:15 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char		uc;
 	size_t				i;
 
+	if (!s)
+		return (NULL);
 	us = (const unsigned char *) s;
 	uc = (unsigned char) c;
 	i = 0;

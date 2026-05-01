@@ -6,7 +6,7 @@
 /*   By: kaclaes <kaclaes@student.42belgium.be>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 15:31:36 by kaclaes           #+#    #+#             */
-/*   Updated: 2026/04/27 17:16:00 by kaclaes          ###   ########.fr       */
+/*   Updated: 2026/05/01 16:53:04 by kaclaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!lst || !f)
+	if (!f)
 		return ;
 	while (lst)
 	{
